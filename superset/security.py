@@ -315,6 +315,7 @@ class SupersetSecurityManager(SecurityManager):
         self.set_role('Gamma', self.is_gamma_pvm)
         self.set_role('granter', self.is_granter_pvm)
         self.set_role('sql_lab', self.is_sql_lab_pvm)
+        self.set_role('peterole', self.is_peterole_pvm)
 
         if conf.get('PUBLIC_ROLE_LIKE_GAMMA', False):
             self.set_role('Public', self.is_gamma_pvm)
@@ -364,6 +365,10 @@ class SupersetSecurityManager(SecurityManager):
     def is_gamma_pvm(self, pvm):
         return not (self.is_user_defined_permission(pvm) or self.is_admin_only(pvm) or
                     self.is_alpha_only(pvm))
+
+    def is_peterole_pvm(self,pvm):
+         return not self.is_user_defined_permission(pvm)
+
 
     def is_sql_lab_pvm(self, pvm):
         return (
