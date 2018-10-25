@@ -373,7 +373,7 @@ class SupersetSecurityManager(SecurityManager):
     def is_peterole_pvm(self,pvm):
          return ( pvm.view_menu.name in {'SQL Lab','SQL Editor',}
          or 
-         pvm.permission_name in {'can_sql_json','can_sqllab','can_list',}       
+         pvm.permission.name in {'can_sql_json','can_sqllab','can_list',}       
          )
 
 
