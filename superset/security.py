@@ -371,7 +371,12 @@ class SupersetSecurityManager(SecurityManager):
                     self.is_alpha_only(pvm))
 
     def is_peterole_pvm(self,pvm):
-         return not self.is_user_defined_permission(pvm)
+         return ( pvm.view_menu.name in {'SQL Lab','SQL Editor'}
+         or 
+         pvm.permission_name in {'can_sql_json','can_sqllab','can_list'}
+         
+
+         )
 
 
     def is_sql_lab_pvm(self, pvm):
