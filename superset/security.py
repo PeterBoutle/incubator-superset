@@ -271,6 +271,10 @@ class SupersetSecurityManager(SecurityManager):
         for datasource in datasources:
             merge_pv('datasource_access', datasource.get_perm())
             merge_pv('schema_access', datasource.schema_perm)
+            logging.info("see if we can add a schema pem here")
+            merge_pv('pbSchema_access',datasource.schema_perm)
+
+       
 
         logging.info('Creating missing database permissions.')
         databases = db.session.query(models.Database).all()
