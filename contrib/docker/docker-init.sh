@@ -15,7 +15,7 @@ superset init
 cd superset/assets && npm run build && cd ../../
 
 # Start superset worker for SQL Lab
-superset worker &
+#superset worker &
 
 # To start a development web server, use the -d switch
 superset runserver -d
