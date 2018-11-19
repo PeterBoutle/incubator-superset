@@ -366,9 +366,10 @@ class Dashboard(Model, AuditMixinNullable, ImportMixin):
     slices = relationship(
         'Slice', secondary=dashboard_slices, backref='dashboards')
     owners = relationship(security_manager.user_model, secondary=dashboard_user)
+    category = Column(String(500))
 
     export_fields = ('dashboard_title', 'position_json', 'json_metadata',
-                     'description', 'css', 'slug')
+                     'description', 'css', 'slug','category')
 
     def __repr__(self):
         return self.dashboard_title
