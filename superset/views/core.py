@@ -554,7 +554,7 @@ class DashboardModelView(SupersetModelView, DeleteMixin):  # noqa
     add_title = _('Add Dashboard')
     edit_title = _('Edit Dashboard')
 
-    list_columns = ['category',dashboard_link', 'creator', 'modified']
+    list_columns = ['category','dashboard_link', 'creator', 'modified']
     order_columns = ['modified']
     edit_columns = [
         'dashboard_title', 'slug', 'owners', 'position_json', 'css',
