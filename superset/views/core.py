@@ -585,6 +585,7 @@ class DashboardModelView(SupersetModelView, DeleteMixin):  # noqa
     label_columns = {
         'dashboard_link': _('Dashboard'),
         'dashboard_title': _('Title'),
+        'category':_('category')
         'slug': _('Slug'),
         'slices': _('Charts'),
         'owners': _('Owners'),
