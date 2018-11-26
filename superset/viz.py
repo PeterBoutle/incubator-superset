@@ -1485,6 +1485,7 @@ class DistributionBarViz(DistributionPieViz):
     viz_type = 'dist_bar'
     verbose_name = _('Distribution - Bar Chart')
     is_timeseries = False
+    sort_series = True
 
     def query_obj(self):
         d = super(DistributionBarViz, self).query_obj()  # noqa
